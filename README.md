@@ -1,3 +1,12 @@
 # RORNet
 Explorative Grasping of Referred Weak Stiffness Objects via Vision-Language-Tactile Fusion
-<img src="1.png">  
+<p align="center">
+  <img src="1.png">  
+</p>
+**Contributions:**
+
+## Environment
+
+## Training
+
+## Acknowledge
