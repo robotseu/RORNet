@@ -1,0 +1,35 @@
+env:
+  deterministic: True
+
+train:
+  output_dir: "./output"
+  batch_size: 8
+  num_workers: 2
+  epochs: 60
+  warmup_epochs: 1
+  base_lr: 0.001
+  warmup_lr: 0.001
+  min_lr: 0.00001
+  scheduler:
+    name: "cosine"
+    decay_epochs: [40,50,60]
+    lr_decay_rate: 0.2
+  clip_grad_norm: 0.15
+  log_period: 50
+  save_period: 1
+  log_image: False
+
+optim:
+  lr: 0.001
+  eps: 1e-9
+  betas: [0.9,0.98]
+
+dataset:
+  anns_path:
+    train: '/home/lab404/Expand1/zzy/dataset/tac-grasp-dataset/anns/contrastive_learning_anns/complex_anns/train.txt'
+    test: '/home/lab404/Expand1/zzy/dataset/tac-grasp-dataset/anns/contrastive_learning_anns/complex_anns/cloth_all.txt'
+  img_path: "/home/lab404/Expand1/zzy/dataset/tac-grasp-dataset/sequence/"
+  input_shape: 224
+
+model:
+  clip_model_path: "/home/lab404/Expand1/zzy/dataset/weights/ViT-B-32.pt"
